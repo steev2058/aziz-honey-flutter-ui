@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+class AzizTheme {
+  static const Color primary = Color(0xFF8A2332);
+  static const Color accent = Color(0xFFD9A441);
+  static const Color dark = Color(0xFF2E2320);
+  static const Color bg = Color(0xFFF8F4EE);
+
+  static ThemeData get light => ThemeData(
+        useMaterial3: true,
+        scaffoldBackgroundColor: bg,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: primary,
+          primary: primary,
+          secondary: accent,
+          background: bg,
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: dark,
+          elevation: 0,
+          centerTitle: true,
+        ),
+        cardTheme: CardTheme(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+          elevation: 0,
+        ),
+      );
+}
