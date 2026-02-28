@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'theme.dart';
 import 'screens/home_screen.dart';
+import 'screens/shop_screen.dart';
 import 'screens/cart_screen.dart';
 import 'screens/account_screen.dart';
+import 'screens/checkout_screen.dart';
+import 'screens/auth_screen.dart';
+import 'screens/orders_tracking_screen.dart';
+import 'screens/wishlist_screen.dart';
+import 'screens/contact_screen.dart';
+import 'screens/about_screen.dart';
+import 'screens/faq_screen.dart';
+import 'screens/lab_certificate_screen.dart';
+import 'screens/return_policy_screen.dart';
 
 void main() {
   runApp(const AzizHoneyApp());
@@ -17,6 +27,17 @@ class AzizHoneyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Aziz Honey',
       theme: AzizTheme.light,
+      routes: {
+        '/checkout': (_) => const CheckoutScreen(),
+        '/auth': (_) => const AuthScreen(),
+        '/orders': (_) => const OrdersTrackingScreen(),
+        '/wishlist': (_) => const WishlistScreen(),
+        '/contact': (_) => const ContactScreen(),
+        '/about': (_) => const AboutScreen(),
+        '/faq': (_) => const FaqScreen(),
+        '/lab': (_) => const LabCertificateScreen(),
+        '/return-policy': (_) => const ReturnPolicyScreen(),
+      },
       home: const RootScreen(),
     );
   }
@@ -34,6 +55,7 @@ class _RootScreenState extends State<RootScreen> {
 
   final pages = const [
     HomeScreen(),
+    ShopScreen(),
     CartScreen(),
     AccountScreen(),
   ];
@@ -58,6 +80,7 @@ class _RootScreenState extends State<RootScreen> {
           onDestinationSelected: (v) => setState(() => index = v),
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: 'الرئيسية'),
+            NavigationDestination(icon: Icon(Icons.storefront_outlined), selectedIcon: Icon(Icons.storefront), label: 'المتجر'),
             NavigationDestination(icon: Icon(Icons.shopping_cart_outlined), selectedIcon: Icon(Icons.shopping_cart), label: 'السلة'),
             NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: 'حسابي'),
           ],

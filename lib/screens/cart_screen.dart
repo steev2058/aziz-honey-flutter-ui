@@ -43,7 +43,7 @@ class CartScreen extends StatelessWidget {
             width: double.infinity,
             child: FilledButton(
               style: FilledButton.styleFrom(backgroundColor: AzizTheme.primary, padding: const EdgeInsets.symmetric(vertical: 14)),
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(context, '/checkout'),
               child: const Text('متابعة الدفع'),
             ),
           ),
