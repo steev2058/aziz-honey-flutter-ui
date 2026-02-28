@@ -41,6 +41,13 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text('الأكثر مبيعًا', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
+                const SizedBox(height: 10),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(color: const Color(0xFFFFF4DD), borderRadius: BorderRadius.circular(14)),
+                  child: const Text('عرض اليوم: خصم خاص على باقة VIP', style: TextStyle(fontWeight: FontWeight.w700, color: AzizTheme.dark)),
+                ),
               ],
             ),
           ),
