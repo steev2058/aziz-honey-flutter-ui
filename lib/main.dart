@@ -13,6 +13,8 @@ import 'screens/about_screen.dart';
 import 'screens/faq_screen.dart';
 import 'screens/lab_certificate_screen.dart';
 import 'screens/return_policy_screen.dart';
+import 'screens/splash_screen.dart';
+import 'widgets/brand_drawer.dart';
 
 void main() {
   runApp(const AzizHoneyApp());
@@ -38,7 +40,7 @@ class AzizHoneyApp extends StatelessWidget {
         '/lab': (_) => const LabCertificateScreen(),
         '/return-policy': (_) => const ReturnPolicyScreen(),
       },
-      home: const RootScreen(),
+      home: const SplashScreen(),
     );
   }
 }
@@ -65,6 +67,7 @@ class _RootScreenState extends State<RootScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+        drawer: const BrandDrawer(),
         appBar: AppBar(
           title: const Text('Aziz Honey'),
           actions: const [
@@ -74,7 +77,12 @@ class _RootScreenState extends State<RootScreen> {
             ),
           ],
         ),
-        body: pages[index],
+        body: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 260),
+          switchInCurve: Curves.easeOut,
+          switchOutCurve: Curves.easeIn,
+          child: KeyedSubtree(key: ValueKey(index), child: pages[index]),
+        ),
         bottomNavigationBar: NavigationBar(
           selectedIndex: index,
           onDestinationSelected: (v) => setState(() => index = v),

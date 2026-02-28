@@ -32,6 +32,11 @@ flutter pub get
 flutter run
 ```
 
+## إضافات UX المنفذة
+- Splash Screen براندد بهوية Aziz Honey
+- Drawer مبدئي للتنقل
+- Animated transitions بين تبويبات التطبيق
+
 ## الخطوة التالية
 - ربط WooCommerce API
 - Auth / Cart / Checkout الحقيقي
