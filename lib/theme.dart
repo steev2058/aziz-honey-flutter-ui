@@ -26,5 +26,10 @@ class AzizTheme {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
           elevation: 0,
         ),
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(fontWeight: FontWeight.w800),
+          titleMedium: TextStyle(fontWeight: FontWeight.w700),
+          bodyMedium: TextStyle(height: 1.4),
+        ),
       );
 }

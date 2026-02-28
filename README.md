@@ -36,6 +36,8 @@ flutter run
 - Splash Screen براندد بهوية Aziz Honey
 - Drawer مبدئي للتنقل
 - Animated transitions بين تبويبات التطبيق
+- تحسين Typography والمسافات
+- Brand logo component مؤقت قابل الاستبدال فور وصول الشعار الرسمي
 
 ## الخطوة التالية
 - ربط WooCommerce API

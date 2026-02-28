@@ -15,6 +15,7 @@ import 'screens/lab_certificate_screen.dart';
 import 'screens/return_policy_screen.dart';
 import 'screens/splash_screen.dart';
 import 'widgets/brand_drawer.dart';
+import 'widgets/brand_logo.dart';
 
 void main() {
   runApp(const AzizHoneyApp());
@@ -69,7 +70,14 @@ class _RootScreenState extends State<RootScreen> {
       child: Scaffold(
         drawer: const BrandDrawer(),
         appBar: AppBar(
-          title: const Text('Aziz Honey'),
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              BrandLogo(),
+              SizedBox(width: 8),
+              Text('Aziz Honey'),
+            ],
+          ),
           actions: const [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
