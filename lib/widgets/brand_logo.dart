@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme.dart';
 
 class BrandLogo extends StatelessWidget {
   final double width;
@@ -7,12 +8,15 @@ class BrandLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      'assets/images/logo.jpg',
+    return Container(
       width: width,
       height: height,
-      fit: BoxFit.contain,
-      errorBuilder: (_, __, ___) => const Icon(Icons.image_not_supported_outlined),
+      decoration: BoxDecoration(
+        color: AzizTheme.primary.withOpacity(.08),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: AzizTheme.accent, width: 1.2),
+      ),
+      child: const Icon(Icons.local_florist_rounded, color: AzizTheme.primary, size: 18),
     );
   }
 }
