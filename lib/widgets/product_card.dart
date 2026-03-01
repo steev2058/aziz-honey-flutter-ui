@@ -44,11 +44,11 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+              Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
               const SizedBox(height: 4),
               const Row(
                 children: [
-                  Text('تقييم 4.7', style: TextStyle(fontSize: 12, color: Colors.black54)),
+                  Text('تقييم 4.7', style: TextStyle(fontSize: 11, color: Colors.black54)),
                   SizedBox(width: 6),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
@@ -60,7 +60,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(height: 6),
               Row(
                 children: [
-                  Text('${product.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(color: AzizTheme.primary, fontWeight: FontWeight.w900, fontSize: 22)),
+                  Text('${product.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(color: AzizTheme.primary, fontWeight: FontWeight.w900, fontSize: 18)),
                   const Spacer(),
                   Container(
                     width: 44,
