@@ -159,7 +159,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             padding: const EdgeInsets.symmetric(vertical: 14),
                           ),
                           onPressed: () {},
-                          icon: const Icon(Icons.shopping_bag_outlined),
+                          icon: const Icon(Icons.shopping_bag_rounded),
                           label: Text('إضافة إلى السلة • ${p.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
                         ),
                       ),

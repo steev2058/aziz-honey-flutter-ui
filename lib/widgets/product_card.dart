@@ -70,7 +70,7 @@ class ProductCard extends StatelessWidget {
                       gradient: const LinearGradient(colors: [Color(0xFFFFA726), Color(0xFFFF7043)]),
                       boxShadow: const [BoxShadow(color: Color(0x33FF7043), blurRadius: 8, offset: Offset(0, 3))],
                     ),
-                    child: const Icon(Icons.shopping_basket_outlined, color: Colors.white, size: 22),
+                    child: const Icon(Icons.shopping_bag_rounded, color: Colors.white, size: 22),
                   )
                 ],
               ),
