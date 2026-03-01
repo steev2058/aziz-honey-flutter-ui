@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [AzizTheme.primary, Color(0xFFB13D4F)]),
+                    gradient: const LinearGradient(colors: [AzizTheme.primary, Color(0xFFC3832E)]),
                     borderRadius: BorderRadius.circular(18),
                   ),
                   child: const Row(

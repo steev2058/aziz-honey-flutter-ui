@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AzizTheme {
-  static const Color primary = Color(0xFF8A2332);
-  static const Color accent = Color(0xFFD9A441);
-  static const Color dark = Color(0xFF2E2320);
-  static const Color bg = Color(0xFFF8F4EE);
+  static const Color primary = Color(0xFF8C5A1F); // honey brown
+  static const Color accent = Color(0xFFF4B400); // honey gold
+  static const Color dark = Color(0xFF3E2C1C);
+  static const Color bg = Color(0xFFFFF8EC);
 
   static ThemeData get light => ThemeData(
         useMaterial3: true,
