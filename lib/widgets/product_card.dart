@@ -71,7 +71,7 @@ class ProductCard extends StatelessWidget {
                       border: Border.all(color: const Color(0xFFE9C98D), width: 1),
                       boxShadow: const [BoxShadow(color: Color(0x338C5A1F), blurRadius: 8, offset: Offset(0, 3))],
                     ),
-                    child: const Icon(Icons.local_mall_rounded, color: Color(0xFFFFF4DD), size: 21),
+                    child: const Icon(Icons.shopping_cart_rounded, color: Color(0xFFFFF4DD), size: 21),
                   )
                 ],
               ),
