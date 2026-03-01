@@ -12,30 +12,65 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(20),
       child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        elevation: 0,
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: AspectRatio(
-                  aspectRatio: 1.2,
-                  child: Image.network(product.image, fit: BoxFit.cover),
+              Expanded(
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(14),
+                      child: SizedBox.expand(
+                        child: Image.network(product.image, fit: BoxFit.cover),
+                      ),
+                    ),
+                    Positioned(
+                      top: 8,
+                      left: 8,
+                      child: Container(
+                        width: 30,
+                        height: 30,
+                        decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                        child: const Icon(Icons.favorite_border, size: 18),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w700)),
+              const SizedBox(height: 10),
+              Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
               const SizedBox(height: 4),
-              Text(product.subtitle, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 12, color: Colors.black54)),
-              const Spacer(),
+              const Row(
+                children: [
+                  Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
+                  Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
+                  Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
+                  Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
+                  Icon(Icons.star_half, color: Color(0xFFF2C94C), size: 16),
+                  SizedBox(width: 6),
+                  Text('(4.7)', style: TextStyle(fontSize: 12, color: Colors.black54)),
+                ],
+              ),
+              const SizedBox(height: 6),
               Row(
                 children: [
-                  Text('${product.price.toStringAsFixed(1)} ر.ع', style: const TextStyle(color: AzizTheme.primary, fontWeight: FontWeight.bold)),
-                  const SizedBox(width: 8),
-                  Text('${product.oldPrice.toStringAsFixed(0)}', style: const TextStyle(decoration: TextDecoration.lineThrough, color: Colors.black38, fontSize: 12)),
+                  Text('${product.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(color: AzizTheme.primary, fontWeight: FontWeight.w900, fontSize: 22)),
+                  const Spacer(),
+                  Container(
+                    width: 38,
+                    height: 38,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      gradient: const LinearGradient(colors: [Color(0xFFFFA726), Color(0xFFFF7043)]),
+                    ),
+                    child: const Icon(Icons.add_shopping_cart_rounded, color: Colors.white, size: 20),
+                  )
                 ],
               ),
             ],

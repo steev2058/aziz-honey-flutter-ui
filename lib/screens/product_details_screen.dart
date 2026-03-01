@@ -13,125 +13,173 @@ class ProductDetailsScreen extends StatefulWidget {
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   int qty = 1;
 
-  List<String> get gallery => [
-        widget.product.image,
-        'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=900',
-        'https://images.unsplash.com/photo-1471943311424-646960669fbc?w=900',
-      ];
-
   @override
   Widget build(BuildContext context) {
     final p = widget.product;
-    final discount = (((p.oldPrice - p.price) / p.oldPrice) * 100).round();
-
     return Scaffold(
-      appBar: AppBar(title: const Text('تفاصيل المنتج')),
-      body: ListView(
-        padding: const EdgeInsets.all(14),
+      backgroundColor: const Color(0xFFF7F7F7),
+      body: Stack(
         children: [
-          Stack(
+          Column(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18),
-                child: AspectRatio(
-                  aspectRatio: 1.1,
-                  child: Image.network(gallery.first, fit: BoxFit.cover),
-                ),
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 340,
+                    width: double.infinity,
+                    child: Image.network(p.image, fit: BoxFit.cover),
+                  ),
+                  Positioned(
+                    top: 48,
+                    right: 16,
+                    child: _circleIcon(Icons.arrow_back, onTap: () => Navigator.pop(context)),
+                  ),
+                  Positioned(
+                    top: 48,
+                    left: 16,
+                    child: _circleIcon(Icons.shopping_bag_outlined),
+                  ),
+                  Positioned(
+                    bottom: 16,
+                    left: 16,
+                    child: _circleIcon(Icons.favorite_border),
+                  ),
+                ],
               ),
-              Positioned(
-                top: 10,
-                right: 10,
+              Expanded(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                  decoration: BoxDecoration(color: AzizTheme.accent, borderRadius: BorderRadius.circular(999)),
-                  child: Text('-$discount%', style: const TextStyle(fontWeight: FontWeight.w800, color: Colors.white)),
+                  width: double.infinity,
+                  padding: const EdgeInsets.fromLTRB(18, 18, 18, 120),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                  ),
+                  child: ListView(
+                    children: [
+                      Container(
+                        width: 70,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(color: const Color(0xFFFFF1DE), borderRadius: BorderRadius.circular(20)),
+                        child: const Text('🍯 عسل', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12)),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(p.name, style: const TextStyle(fontSize: 36, fontWeight: FontWeight.w900, color: AzizTheme.dark)),
+                      const SizedBox(height: 8),
+                      const Row(
+                        children: [
+                          Icon(Icons.star, color: Color(0xFFF2C94C), size: 18),
+                          Icon(Icons.star, color: Color(0xFFF2C94C), size: 18),
+                          Icon(Icons.star, color: Color(0xFFF2C94C), size: 18),
+                          Icon(Icons.star, color: Color(0xFFF2C94C), size: 18),
+                          Icon(Icons.star_half, color: Color(0xFFF2C94C), size: 18),
+                          SizedBox(width: 8),
+                          Text('4.7 rating', style: TextStyle(color: Colors.black54, fontSize: 16)),
+                          SizedBox(width: 12),
+                          Text('● In Stock', style: TextStyle(color: Color(0xFF22A06B), fontWeight: FontWeight.w700, fontSize: 16)),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Text('${p.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(fontSize: 48, color: AzizTheme.primary, fontWeight: FontWeight.w900)),
+                      const SizedBox(height: 14),
+                      const Divider(),
+                      const SizedBox(height: 10),
+                      const Text('Description', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 30)),
+                      const SizedBox(height: 6),
+                      Text(p.subtitle, style: const TextStyle(color: Colors.black54, height: 1.5, fontSize: 28)),
+                      const SizedBox(height: 16),
+                      const Text('Features', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 30)),
+                      const SizedBox(height: 10),
+                      const Row(
+                        children: [
+                          Expanded(child: _FeatureBox(icon: Icons.verified_outlined, title: 'Quality Assured')),
+                          SizedBox(width: 10),
+                          Expanded(child: _FeatureBox(icon: Icons.health_and_safety_outlined, title: 'Safe & Natural')),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10),
-          SizedBox(
-            height: 82,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: gallery.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 8),
-              itemBuilder: (_, i) => ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(gallery[i], width: 82, height: 82, fit: BoxFit.cover),
+          Positioned(
+            right: 14,
+            left: 14,
+            bottom: 14,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(18), boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 12)]),
+              child: Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(border: Border.all(color: Colors.black12), borderRadius: BorderRadius.circular(14)),
+                    child: Row(
+                      children: [
+                        IconButton(onPressed: () => setState(() => qty = qty > 1 ? qty - 1 : 1), icon: const Icon(Icons.remove)),
+                        Text('$qty', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+                        IconButton(onPressed: () => setState(() => qty++), icon: const Icon(Icons.add)),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        gradient: const LinearGradient(colors: [Color(0xFFFFA726), Color(0xFFFF7043)]),
+                      ),
+                      child: FilledButton.icon(
+                        style: FilledButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                        ),
+                        onPressed: () {},
+                        icon: const Icon(Icons.shopping_bag_outlined),
+                        label: Text('Add to Cart • ${p.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(fontWeight: FontWeight.w800)),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-          ),
-          const SizedBox(height: 14),
-          Text('الرئيسية / ${p.name}', style: const TextStyle(color: Colors.black54, fontWeight: FontWeight.w600)),
-          const SizedBox(height: 8),
-          Text('${p.name} (ربع كيلو)', style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800)),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              Text('${p.price.toStringAsFixed(3)} ر.ع', style: const TextStyle(color: AzizTheme.primary, fontSize: 30, fontWeight: FontWeight.w800)),
-              const SizedBox(width: 8),
-              Text('${p.oldPrice.toStringAsFixed(3)} ر.ع', style: const TextStyle(color: Colors.black38, fontSize: 24, decoration: TextDecoration.lineThrough)),
-            ],
-          ),
-          const SizedBox(height: 12),
-          const Text('عسل دوائي شديد الندرة، مقطوف من أغصان الأشجار وشقوق الجبال، بجودة عالية وتعبئة احترافية.', style: TextStyle(fontSize: 18, height: 1.55)),
-          const SizedBox(height: 16),
-
-          Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(border: Border.all(color: Colors.black12), borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  children: [
-                    IconButton(onPressed: () => setState(() => qty = qty > 1 ? qty - 1 : 1), icon: const Icon(Icons.remove)),
-                    Text('$qty', style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
-                    IconButton(onPressed: () => setState(() => qty++), icon: const Icon(Icons.add)),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: FilledButton(
-                  style: FilledButton.styleFrom(backgroundColor: AzizTheme.accent, foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(vertical: 14)),
-                  onPressed: () {},
-                  child: const Text('إضافة إلى السلة', style: TextStyle(fontWeight: FontWeight.w800)),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 14),
-          const Divider(),
-          const SizedBox(height: 8),
-          const Text('رمز المنتج: 9501853649796', style: TextStyle(fontWeight: FontWeight.w700)),
-          const SizedBox(height: 4),
-          Text('التصنيف: ${p.name}', style: const TextStyle(fontWeight: FontWeight.w700)),
-          const SizedBox(height: 12),
-
-          _section('الوصف', 'توصيل مجاني للطلبات فوق حد معين. منتج طبيعي من النحل البري، مقطوف بعناية ومحافظ على خصائصه.'),
-          _section('الفوائد', '• دعم النشاط اليومي\n• طعم طبيعي غني\n• جودة مختبرية'),
-          _section('طريقة الاستخدام', 'ملعقة صباحاً وملعقة مساءً أو حسب الحاجة.'),
-          _section('محاذير الاستخدام', 'غير مناسب لمن لديهم حساسية من منتجات النحل.'),
-          _section('الشحن', 'الشحن حسب الدولة وشركة التوصيل.'),
-          _section('القوام والخواص', 'قوام متوسط إلى كثيف، لون ذهبي يميل للعنبري.'),
-          const SizedBox(height: 20),
+          )
         ],
       ),
     );
   }
 
-  Widget _section(String title, String body) {
-    return ExpansionTile(
-      tilePadding: EdgeInsets.zero,
-      iconColor: AzizTheme.primary,
-      collapsedIconColor: Colors.black45,
-      title: Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 12),
-          child: Text(body, style: const TextStyle(height: 1.6)),
-        )
-      ],
+  Widget _circleIcon(IconData icon, {VoidCallback? onTap}) {
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(14),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(14),
+        child: SizedBox(width: 46, height: 46, child: Icon(icon, color: AzizTheme.dark)),
+      ),
+    );
+  }
+}
+
+class _FeatureBox extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  const _FeatureBox({required this.icon, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(color: const Color(0xFFF7F7F7), borderRadius: BorderRadius.circular(12)),
+      child: Row(
+        children: [
+          Icon(icon, color: AzizTheme.primary),
+          const SizedBox(width: 8),
+          Expanded(child: Text(title, style: const TextStyle(fontWeight: FontWeight.w700))),
+        ],
+      ),
     );
   }
 }
