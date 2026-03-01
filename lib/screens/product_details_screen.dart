@@ -149,14 +149,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
-                          gradient: const LinearGradient(colors: [Color(0xFFFFB74D), Color(0xFFFF9800)]),
-                          border: Border.all(color: const Color(0xFFFFD28A), width: 1),
+                          gradient: const LinearGradient(colors: [AzizTheme.primary, AzizTheme.accent]),
+                          border: Border.all(color: const Color(0xFFF3D7AA), width: 1),
                         ),
                         child: FilledButton.icon(
                           style: FilledButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent,
-                            foregroundColor: const Color(0xFFFFF4DD),
+                            foregroundColor: const Color(0xFFFFF8EF),
                             padding: const EdgeInsets.symmetric(vertical: 14),
                           ),
                           onPressed: () {},
