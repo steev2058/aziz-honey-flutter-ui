@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme.dart';
 import 'brand_logo.dart';
 
 class BrandDrawer extends StatelessWidget {
@@ -7,10 +8,13 @@ class BrandDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: AzizTheme.bg,
       child: ListView(
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(color: Color(0xFF8A2332)),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [AzizTheme.primary, Color(0xFFC3832E)]),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
