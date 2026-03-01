@@ -67,10 +67,11 @@ class ProductCard extends StatelessWidget {
                     height: 44,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(13),
-                      gradient: const LinearGradient(colors: [Color(0xFFFFA726), Color(0xFFFF7043)]),
-                      boxShadow: const [BoxShadow(color: Color(0x33FF7043), blurRadius: 8, offset: Offset(0, 3))],
+                      gradient: const LinearGradient(colors: [AzizTheme.primary, Color(0xFFC3832E)]),
+                      border: Border.all(color: const Color(0xFFE9C98D), width: 1),
+                      boxShadow: const [BoxShadow(color: Color(0x338C5A1F), blurRadius: 8, offset: Offset(0, 3))],
                     ),
-                    child: const Icon(Icons.shopping_bag_rounded, color: Colors.white, size: 22),
+                    child: const Icon(Icons.local_mall_rounded, color: Color(0xFFFFF4DD), size: 21),
                   )
                 ],
               ),

@@ -149,17 +149,18 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
-                          gradient: const LinearGradient(colors: [Color(0xFFFFA726), Color(0xFFFF7043)]),
+                          gradient: const LinearGradient(colors: [AzizTheme.primary, Color(0xFFC3832E)]),
+                          border: Border.all(color: const Color(0xFFE9C98D), width: 1),
                         ),
                         child: FilledButton.icon(
                           style: FilledButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent,
-                            foregroundColor: Colors.white,
+                            foregroundColor: const Color(0xFFFFF4DD),
                             padding: const EdgeInsets.symmetric(vertical: 14),
                           ),
                           onPressed: () {},
-                          icon: const Icon(Icons.shopping_bag_rounded),
+                          icon: const Icon(Icons.local_mall_rounded, size: 20),
                           label: Text('إضافة إلى السلة • ${p.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
                         ),
                       ),
