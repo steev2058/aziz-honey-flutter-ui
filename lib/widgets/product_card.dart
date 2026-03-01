@@ -48,13 +48,13 @@ class ProductCard extends StatelessWidget {
               const SizedBox(height: 4),
               const Row(
                 children: [
+                  Text('(4.7)', style: TextStyle(fontSize: 12, color: Colors.black54)),
+                  SizedBox(width: 6),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
                   Icon(Icons.star_half, color: Color(0xFFF2C94C), size: 16),
-                  SizedBox(width: 6),
-                  Text('(4.7)', style: TextStyle(fontSize: 12, color: Colors.black54)),
                 ],
               ),
               const SizedBox(height: 6),
@@ -70,7 +70,7 @@ class ProductCard extends StatelessWidget {
                       gradient: const LinearGradient(colors: [Color(0xFFFFA726), Color(0xFFFF7043)]),
                       boxShadow: const [BoxShadow(color: Color(0x33FF7043), blurRadius: 8, offset: Offset(0, 3))],
                     ),
-                    child: const Icon(Icons.add_shopping_cart_rounded, color: Colors.white, size: 22),
+                    child: const Icon(Icons.shopping_basket_outlined, color: Colors.white, size: 22),
                   )
                 ],
               ),
