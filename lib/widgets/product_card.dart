@@ -32,7 +32,7 @@ class ProductCard extends StatelessWidget {
                     ),
                     Positioned(
                       top: 8,
-                      left: 8,
+                      right: 8,
                       child: Container(
                         width: 30,
                         height: 30,
@@ -44,11 +44,11 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+              Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
               const SizedBox(height: 4),
               const Row(
                 children: [
-                  Text('(4.7)', style: TextStyle(fontSize: 12, color: Colors.black54)),
+                  Text('تقييم 4.7', style: TextStyle(fontSize: 12, color: Colors.black54)),
                   SizedBox(width: 6),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
                   Icon(Icons.star, color: Color(0xFFF2C94C), size: 16),
