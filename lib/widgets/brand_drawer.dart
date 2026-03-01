@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'brand_logo.dart';
 
 class BrandDrawer extends StatelessWidget {
   const BrandDrawer({super.key});
@@ -14,8 +15,8 @@ class BrandDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Aziz Honey', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
-                SizedBox(height: 6),
+                BrandLogo(width: 120, height: 40),
+                SizedBox(height: 10),
                 Text('العسل الذي يطلبه مرضى السكري', style: TextStyle(color: Colors.white70)),
               ],
             ),

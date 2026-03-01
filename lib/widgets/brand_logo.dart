@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import '../theme.dart';
 
 class BrandLogo extends StatelessWidget {
-  final double size;
-  const BrandLogo({super.key, this.size = 30});
+  final double width;
+  final double height;
+  const BrandLogo({super.key, this.width = 72, this.height = 28});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: AzizTheme.primary.withOpacity(.1),
-        border: Border.all(color: AzizTheme.accent, width: 1.2),
-      ),
-      child: const Icon(Icons.local_florist_rounded, color: AzizTheme.primary, size: 18),
+    return Image.asset(
+      'assets/images/logo.jpg',
+      width: width,
+      height: height,
+      fit: BoxFit.contain,
+      errorBuilder: (_, __, ___) => const Icon(Icons.image_not_supported_outlined),
     );
   }
 }

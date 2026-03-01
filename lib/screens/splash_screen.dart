@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../theme.dart';
 import 'onboarding_screen.dart';
+import '../widgets/brand_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -42,9 +43,9 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 38,
+              radius: 42,
               backgroundColor: Colors.white,
-              child: Icon(Icons.local_florist_rounded, color: AzizTheme.accent, size: 42),
+              child: BrandLogo(width: 72, height: 30),
             ),
             SizedBox(height: 18),
             Text('Aziz Honey', style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w800)),

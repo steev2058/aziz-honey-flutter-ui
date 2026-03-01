@@ -73,7 +73,7 @@ class _RootScreenState extends State<RootScreen> {
           title: Row(
             mainAxisSize: MainAxisSize.min,
             children: const [
-              BrandLogo(),
+              BrandLogo(width: 88, height: 30),
               SizedBox(width: 8),
               Text('Aziz Honey'),
             ],
