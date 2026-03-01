@@ -100,14 +100,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
             ],
           ),
-          const SizedBox(height: 10),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text('Add to wishlist ♡', style: TextStyle(fontWeight: FontWeight.w700)),
-              Text('Add to compare ⤧', style: TextStyle(fontWeight: FontWeight.w700)),
-            ],
-          ),
           const SizedBox(height: 14),
           const Divider(),
           const SizedBox(height: 8),
