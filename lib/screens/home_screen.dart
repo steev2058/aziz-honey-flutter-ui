@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('عزيز للعسل البري', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w800)),
+                            Text('أزيز للعسل البري', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w800)),
                             SizedBox(height: 6),
                             Text('العسل الذي يطلبه مرضى السكري', style: TextStyle(color: Colors.white70)),
                           ],
