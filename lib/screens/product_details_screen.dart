@@ -160,7 +160,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             padding: const EdgeInsets.symmetric(vertical: 14),
                           ),
                           onPressed: () {},
-                          icon: const Icon(Icons.local_mall_rounded, size: 20),
+                          icon: const Icon(Icons.local_mall_outlined, size: 20),
                           label: Text('إضافة إلى السلة • ${p.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
                         ),
                       ),
