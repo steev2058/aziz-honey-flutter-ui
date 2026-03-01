@@ -34,7 +34,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     Positioned(
                       top: 46,
                       right: 16,
-                      child: _circleIcon(Icons.arrow_back, onTap: () => Navigator.pop(context)),
+                      child: _circleIcon(Icons.arrow_forward, onTap: () => Navigator.pop(context)),
                     ),
                     Positioned(
                       top: 46,
