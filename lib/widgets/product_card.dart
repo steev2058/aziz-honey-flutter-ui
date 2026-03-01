@@ -63,13 +63,14 @@ class ProductCard extends StatelessWidget {
                   Text('${product.price.toStringAsFixed(2)} ر.ع', style: const TextStyle(color: AzizTheme.primary, fontWeight: FontWeight.w900, fontSize: 22)),
                   const Spacer(),
                   Container(
-                    width: 38,
-                    height: 38,
+                    width: 44,
+                    height: 44,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(13),
                       gradient: const LinearGradient(colors: [Color(0xFFFFA726), Color(0xFFFF7043)]),
+                      boxShadow: const [BoxShadow(color: Color(0x33FF7043), blurRadius: 8, offset: Offset(0, 3))],
                     ),
-                    child: const Icon(Icons.add_shopping_cart_rounded, color: Colors.white, size: 20),
+                    child: const Icon(Icons.add_shopping_cart_rounded, color: Colors.white, size: 22),
                   )
                 ],
               ),
