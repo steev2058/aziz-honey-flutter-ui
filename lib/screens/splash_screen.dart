@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [AzizTheme.primary, Color(0xFFFF4E2A)],
+            colors: [AzizTheme.primary, Color(0xFFFFB56B)],
           ),
         ),
         child: const Column(

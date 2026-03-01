@@ -13,7 +13,7 @@ class BrandDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [AzizTheme.primary, Color(0xFFFF4E2A)]),
+              gradient: LinearGradient(colors: [AzizTheme.primary, Color(0xFFFFB56B)]),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
