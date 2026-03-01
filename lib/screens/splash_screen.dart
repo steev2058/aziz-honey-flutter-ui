@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 18),
             Text('Aziz Honey', style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w800)),
             SizedBox(height: 6),
-            Text('أزيز للعسل البري', style: TextStyle(color: Colors.white70, fontSize: 16, fontWeight: FontWeight.w600)),
+            Text('عزيز للعسل البري', style: TextStyle(color: Colors.white70, fontSize: 16, fontWeight: FontWeight.w600)),
           ],
         ),
       ),
